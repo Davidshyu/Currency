@@ -31,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
         String nt = edntDollar.getText().toString();
         if(nt == null|| nt.trim().length() == 0){
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter your NTD amount")
-                    .setPositiveButton("ok",null)
+                    .setTitle(R.string.problem)
+                    .setMessage(R.string.please_enter_ntd)
+                    .setPositiveButton(R.string.ok,null)
                     .show();
         }else {
             double ntDollar = Double.parseDouble(nt);
             double usDollar = ntDollar / 30.9;
-            new AlertDialog.Builder(this).setTitle("Result")
-                    .setMessage("USD is " + usDollar)
-                    .setPositiveButton("ok", null)
+            new AlertDialog.Builder(this).setTitle(R.string.result)
+                    .setMessage(getString(R.string.usd_is) + usDollar)
+                    .setPositiveButton(R.string.ok, null)
                     .show();
             edUsd.setText(" is "+ usDollar);
 
